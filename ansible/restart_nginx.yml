@@ -1,0 +1,14 @@
+
+---
+- name: Self Healing NGINX Infrastructure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Restart failed NGINX container
+      command: docker restart self-healing-nginx
+
+    - name: Display recovery message
+      debug:
+        msg: "NGINX has been restarted successfully!"

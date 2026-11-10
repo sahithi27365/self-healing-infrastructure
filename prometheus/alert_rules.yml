@@ -1,0 +1,20 @@
+groups:
+  - name: infrastructure-alerts
+    rules:
+      - alert: NginxDown
+        expr: nginx_up == 0
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "NGINX service is down"
+          description: "NGINX is not responding."
+
+      - alert: NginxExporterDown
+        expr: up{job="nginx"} == 0
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "NGINX exporter is down"
+          description: "NGINX monitoring exporter is unavailable."

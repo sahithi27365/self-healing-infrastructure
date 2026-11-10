@@ -1,0 +1,30 @@
+
+# Self-Healing Infrastructure
+
+## Project Overview
+This project demonstrates a self-healing infrastructure system using Docker, Prometheus, Alertmanager, Webhooks, and Ansible.
+
+It monitors an NGINX service, detects failures, sends alerts, and uses an Ansible playbook to restart the NGINX container.
+
+## Tools and Technologies
+- Docker and Docker Compose
+- NGINX
+- Prometheus
+- Prometheus NGINX Exporter
+- Alertmanager
+- Python Flask Webhook
+- Ansible
+
+## Project Architecture
+
+1. NGINX runs as a Docker container.
+2. NGINX Exporter collects NGINX metrics.
+3. Prometheus collects and evaluates metrics.
+4. Alertmanager receives alerts from Prometheus.
+5. A Python Flask webhook receives alert notifications.
+6. Ansible runs a playbook to restart the NGINX container.
+
+
+
+- Integrated Alertmanager with a Python webhook.
+- Used Ansible to automate container recovery.
